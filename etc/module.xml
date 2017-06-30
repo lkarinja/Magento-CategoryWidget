@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+This widget is a heavily modified version of the two github repositories listed below:
+
+https://github.com/emizentech/magento2-category-list-widget
+https://github.com/Sebwite/magento2-category-sidebar/blob/master/view/frontend/templates/sidebar.phtml
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+	<module name="PlymDesign_CategoryWidget" setup_version="1.0.0">
+	</module>
+</config>

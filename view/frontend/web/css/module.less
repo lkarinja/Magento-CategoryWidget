@@ -1,0 +1,65 @@
+/*
+This widget is a heavily modified version of the two github repositories listed below:
+
+https://github.com/emizentech/magento2-category-list-widget
+https://github.com/Sebwite/magento2-category-sidebar/blob/master/view/frontend/templates/sidebar.phtml
+*/
+.category-widget {
+	background-color: rgba(240,240,240,0.5);
+	outline: 1px solid #c0c0c0;
+	padding-left: 5px;
+
+	.category-widget-header {
+		padding-top: .5em;
+	}
+
+	.category-widget-expand, .category-widget-expanded {
+		cursor: pointer;
+		float: right;
+	}
+
+	.category-widget-list {
+		margin: 0 0 0 0;
+		padding-left: 0px;
+
+		li {
+			margin: 0 0 0 0;
+			list-style: none;
+			outline: 1px solid #c0c0c0;
+			padding-left: 1em;
+			padding-top: .25em;
+
+			
+
+			&.category-widget-category-active {
+				> ul {
+					display: block;
+
+					li:last-of-type {
+						border-bottom: 0px;
+						padding-bottom: 0px;
+						margin-bottom: 0px;
+					}
+				}
+			}
+
+			a {
+				&.category-widget-category-active {
+					font-weight: bold;
+				}
+				display: inline-block;
+			}
+
+			> ul {
+				padding-top: 0px;
+				margin-top: 0px;
+			}
+		}
+	}
+	> .category-widget-list {
+		display: block;
+		margin-top: 30px;
+		padding-right: 45px;
+		margin-bottom: 30px;
+	}
+}

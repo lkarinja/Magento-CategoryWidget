@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+This widget is a heavily modified version of the two github repositories listed below:
+
+https://github.com/emizentech/magento2-category-list-widget
+https://github.com/Sebwite/magento2-category-sidebar/blob/master/view/frontend/templates/sidebar.phtml
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="plymdesign_categorywidget" class="PlymDesign\CategoryWidget\Block\Widget\CategoryWidget">
+		<label translate="true">Category List Widget</label>
+		<description>Category List Widget</description>
+		<parameters>
+			<parameter name="image" xsi:type="select" required="true" visible="true">
+				<label translate="true">Image Type</label>
+				<options>
+					<option name="default" value="no-image" selected="true">
+						<label translate="true">Without Image</label>
+					</option>
+					<option name="image" value="image">
+						<label translate="true">With Image</label>
+					</option>
+				</options>
+			</parameter>
+
+			<parameter name="imagewidth" xsi:type="text" visible="true" sort_order="2">
+				<label translate="true">Image Width</label>
+				<description translate="true">Enter Image Width in px</description>
+				<value>200</value>
+			</parameter>
+
+			<parameter name="imageheight" xsi:type="text" visible="true" sort_order="3">
+				<label translate="true">Image Height</label>
+				<description translate="true">Enter Image Height in px</description>
+				<value>200</value>
+			</parameter>
+
+			<parameter name="parentcat" xsi:type="text" visible="true" sort_order="10">
+				<label translate="true">Parent Category ID</label>
+				<description translate="true">Default Category of Current Store will be used if left blank</description>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>

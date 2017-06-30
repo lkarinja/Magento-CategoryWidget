@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+This widget is a heavily modified version of the two github repositories listed below:
+
+https://github.com/emizentech/magento2-category-list-widget
+https://github.com/Sebwite/magento2-category-sidebar/blob/master/view/frontend/templates/sidebar.phtml
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="PlymDesign_CategoryWidget::css/module.css" />
+		<css src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" src_type="url" />
+	</head>
+</page>

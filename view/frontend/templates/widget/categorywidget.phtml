@@ -1,0 +1,67 @@
+<!--
+This widget is a heavily modified version of the two github repositories listed below:
+
+https://github.com/emizentech/magento2-category-list-widget
+https://github.com/Sebwite/magento2-category-sidebar/blob/master/view/frontend/templates/sidebar.phtml
+-->
+<?php
+	$categories = $this->getCategoryCollection();
+	$categoryHelper = $this->getCategoryHelper();
+	$canshowImg = $this->canShowImage();
+?>
+<div class="category-widget">
+	<h3 class="category-widget-header"><?php echo __('Categories'); ?></h3>
+
+	<div class="category-widget-block-content">
+		<ul class="category-widget-list">
+			<?php
+			foreach($categories as $category):
+				$cat = $this->getCategorymodel($category->getId());
+			?>
+				<li class="category-widget-category<?php echo($this->isActive($category) ? ' category-widget-category-active' : ''); ?>">
+					<a href="<?php echo $cat->getUrl(); ?>" class="<?php echo($this->isActive($category) ? ' category-widget-category-active' : ''); ?>">
+						<?php if($canshowImg && $cat->getImageUrl()):?>
+							<img src="<?= $cat->getImageUrl(); ?>" alt="" width="<?=$this->getImagewidth();?>" height="<?=$this->getImageheight()?>"/>
+						<?php else:?>
+							<span class="category-widget-category-title"><?php echo $cat->getName(); ?></span>
+						<?php endif;?>
+					</a>
+					<?php if($category->hasChildren()): ?>
+						<span class="category-widget-expand"><?php echo $this->isActive($category) ? '<i class="fa fa-minus-square-o"></i>' : '<i class="fa fa-plus-square-o"></i>'; ?></span>
+						<?php echo $this->getChildCategoryView($category); ?>
+					<?php endif; ?>
+				</li>
+			<?php
+				endforeach;
+			?>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	require(['jquery'], function ($) {
+		$(function () {
+			$('.category-widget').on('click', '.category-widget-list .category-widget-expand, .category-widget-list .category-widget-expanded', function () {
+				var element = $(this).parent('li');
+
+				if (element.hasClass('category-widget-category-active')) {
+					element.find('ul').slideUp();
+
+					element.removeClass('category-widget-category-active');
+					element.find('li').removeClass('category-widget-category-active');
+
+					element.find('i').removeClass('fa-minus-square-o').addClass('fa-plus-square-o');
+				} else {
+					element.children('ul').slideDown();
+					element.siblings('li').children('ul').slideUp();
+					element.parent('ul').find('i').removeClass('fa-minus-square-o').addClass('fa-plus-square-o');
+					element.find('> span i').removeClass('fa-plus-square-o').addClass('fa-minus-square-o');
+
+					element.addClass('category-widget-category-active');
+					element.siblings('li').removeClass('category-widget-category-active');
+					element.siblings('li').find('li').removeClass('category-widget-category-active');
+					element.siblings('li').find('ul').slideUp();
+				}
+			});
+		});
+	});
+</script>
