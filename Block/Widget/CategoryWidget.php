@@ -1,5 +1,25 @@
 <?php
 /*
+Copyright © 2015-2016 Emizentech
+Copyright © 2016-2017 Sebwite
+Copyright © 2017 Leejae Karinja
+
+This file is part of CategoryWidget.
+
+CategoryWidget is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CategoryWidget is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with CategoryWidget.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/*
 This widget is a heavily modified version of the two github repositories listed below:
 
 https://github.com/emizentech/magento2-category-list-widget
